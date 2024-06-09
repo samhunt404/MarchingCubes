@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3ndarkd7f4ce"]
+
+[ext_resource type="Script" path="res://chunk.gd" id="1_uad2i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_83gq8"]
+size = Vector3(4, 4, 4)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lkmkw"]
+
+[node name="Chunk" type="Node3D"]
+script = ExtResource("1_uad2i")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_83gq8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_lkmkw")
